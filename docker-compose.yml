@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  helloworld-service:
+    build: ./HelloWorldApi
+    ports: 
+      - 8080:80
+  hellouniverse-service:
+    build: ./HelloUniverseApi
+    ports:
+     - 4000:80
