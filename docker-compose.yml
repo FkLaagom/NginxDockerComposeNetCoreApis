@@ -1,11 +1,18 @@
 version: '3'
 
 services:
+  nginx:
+    build: ./Nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - 80:80
+      - 443:443
   helloworld-service:
     build: ./HelloWorldApi
-    ports: 
-      - 8080:80
+    expose:
+      - "80"
   hellouniverse-service:
     build: ./HelloUniverseApi
-    ports:
-     - 4000:80
+    expose:
+      - "80"
